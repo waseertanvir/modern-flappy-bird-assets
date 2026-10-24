@@ -2,6 +2,8 @@
 
 A modern, smooth 3D-cartoon style asset set for a Flappy Bird-inspired game. Everything except the bird is vector (SVG), so it scales to any resolution.
 
+![Modern Flappy Bird sprite sheet](assets/modern-flappy-bird-sprite-sheet.png)
+
 ## What is in here
 
 | Folder | Contents |
