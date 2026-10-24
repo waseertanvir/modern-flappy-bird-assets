@@ -10,7 +10,7 @@ A modern, smooth 3D-cartoon style asset set for a Flappy Bird-inspired game. Eve
 | --- | --- |
 | `assets/birds/` | The bird in three wing poses (`bird_flap_0` wings up, `bird_flap_1` mid, `bird_flap_2` down). Transparent PNGs cut from the original sprite sheet, all on the same canvas and aligned on the beak, so they can be swapped frame by frame without jitter. |
 | `assets/svg/` | Vector sprites: pipes, coin, replay button, score badge, ground, sky. |
-| `assets/png/` | The same vector sprites exported as PNG at 2x, for engines that do not load SVG. |
+| `assets/png/` | Transparent PNGs cut directly from the sprite sheet, so they match the original design exactly. `background_sky_loop.png` is still the vector export. |
 | `assets/modern-flappy-bird-sprite-sheet.png` | The original concept sheet everything was derived from. |
 
 ## Vector sprites
