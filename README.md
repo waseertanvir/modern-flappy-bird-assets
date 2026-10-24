@@ -1,6 +1,6 @@
 # Modern Flappy Bird Assets
 
-A modern, smooth 3D-cartoon style asset set for a Flappy Bird-inspired game. Every sprite is a PNG cut from the original sprite sheet and upscaled 4x, so it keeps the exact design but stays sharp on high-resolution screens.
+A modern, smooth 3D-cartoon style asset set for a Flappy Bird-inspired game. Every sprite is a PNG cut from the original sprite sheet and upscaled 4x with the [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) AI upscaler, so it keeps the exact design but stays sharp on high-resolution screens.
 
 ![Modern Flappy Bird sprite sheet](assets/modern-flappy-bird-sprite-sheet.png)
 
@@ -10,7 +10,7 @@ A modern, smooth 3D-cartoon style asset set for a Flappy Bird-inspired game. Eve
 | --- | --- |
 | `assets/birds/` | The bird in three wing poses (`bird_flap_0` wings up, `bird_flap_1` mid, `bird_flap_2` down). All on the same 1020 x 980 canvas and aligned on the beak, so they can be swapped frame by frame without jitter. |
 | `assets/png/` | Pipes, coin, replay button, score badge, ground and sky. |
-| `assets/modern-flappy-bird-sprite-sheet.png` | The original concept sheet everything was cut from. |
+| `assets/modern-flappy-bird-sprite-sheet.png` | The concept sheet everything was cut from, upscaled 4x to 6144 x 4096. |
 
 ## Sprites
 
@@ -35,7 +35,9 @@ A modern, smooth 3D-cartoon style asset set for a Flappy Bird-inspired game. Eve
 
 ## How the sprites were made
 
-Each sprite was cut from the sprite sheet, then upscaled 4x with [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (`realesrgan-x4plus` model). Before upscaling, the edge pixels left over from the sheet's white background were repainted with the sprite's own colors, so there is no white outline on dark backgrounds.
+Each sprite was cut from the original 1536 x 1024 sprite sheet, then upscaled 4x with [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN), using the [realesrgan-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan) build and the general-purpose `realesrgan-x4plus` model. That model was chosen over the anime model because it keeps the soft 3D shading instead of adding dark outlines. The sprite sheet itself was upscaled the same way.
+
+For the transparent sprites, color and transparency were upscaled separately. Before upscaling, the edge pixels left over from the sheet's white background were repainted with the sprite's own colors, so there is no white outline on dark backgrounds.
 
 ## Source inspiration
 
