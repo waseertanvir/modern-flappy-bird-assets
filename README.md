@@ -2,8 +2,6 @@
 
 A modern, smooth 3D-cartoon style asset set for a Flappy Bird-inspired game. Everything except the bird is vector (SVG), so it scales to any resolution.
 
-![Preview scene](assets/preview.png)
-
 ## What is in here
 
 | Folder | Contents |
