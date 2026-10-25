@@ -1,6 +1,6 @@
 # Modern Flappy Bird Assets
 
-A modern, smooth 3D-cartoon style asset set for a Flappy Bird-inspired game. Every sprite is a PNG cut from the original sprite sheet and upscaled 4x with the [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) AI upscaler, so it keeps the exact design but stays sharp on high-resolution screens.
+A modern, smooth 3D-cartoon style asset set for a Flappy Bird-inspired game. Every sprite is a PNG cut from the original sprite sheet. Most are upscaled 4x with the [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) AI upscaler, so they keep the exact design but stay sharp on high-resolution screens. The ground and sky tiles are kept near the sheet's resolution and edited to scroll seamlessly.
 
 ![Modern Flappy Bird sprite sheet](assets/modern-flappy-bird-sprite-sheet.png)
 
@@ -23,19 +23,19 @@ A modern, smooth 3D-cartoon style asset set for a Flappy Bird-inspired game. Eve
 | `coin.png` | 560 x 588 | Collectible coin. |
 | `button_replay.png` | 864 x 836 | Replay button. |
 | `score_badge.png` | 1508 x 660 | Score frame with placeholder `0000` digits, as on the sheet. |
-| `ground_tile.png` | 4132 x 624 | Grass and soil strip. Repeat it horizontally for a scrolling floor. |
-| `background_sky.png` | 3016 x 1384 | Sky, clouds and hills. The only sprite without transparency. |
+| `ground_tile.png` | 779 x 152 | Grass and soil strip. Tiles seamlessly, so repeat it horizontally for a scrolling floor. |
+| `background_sky.png` | 539 x 346 | Sky, clouds and hills. Fully opaque, and tiles seamlessly horizontally. |
 
 ## Using the assets
 
 - **Building a pipe:** place `pipe_cap_top` at the gap edge, then stack `pipe_body` below it, centred under the cap. Do the same with `pipe_cap_bottom` for the upper pipe.
-- **Scrolling:** move `ground_tile` and `background_sky` left and wrap around. Move the sky slower than the ground for a parallax effect. If the sky shows a seam when it wraps, alternate it with a horizontally mirrored copy.
+- **Scrolling:** move `ground_tile` and `background_sky` left and wrap around. Move the sky slower than the ground for a parallax effect. Both tiles wrap with no seam.
 - **Animating the bird:** cycle `bird_flap_0`, `bird_flap_1`, `bird_flap_2`, `bird_flap_1`.
-- **Smaller sizes:** the sprites are large so they hold up on any screen. Scale them down in your engine, or resize them once with a high-quality filter if you need smaller files.
+- **Smaller sizes:** the upscaled sprites are large so they hold up on any screen. Scale them down in your engine, or resize them once with a high-quality filter if you need smaller files.
 
 ## How the sprites were made
 
-Each sprite was cut from the original 1536 x 1024 sprite sheet, then upscaled 4x with [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN), using the [realesrgan-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan) build and the general-purpose `realesrgan-x4plus` model. That model was chosen over the anime model because it keeps the soft 3D shading instead of adding dark outlines. The sprite sheet itself was upscaled the same way.
+Each sprite except the ground and sky tiles was cut from the original 1536 x 1024 sprite sheet, then upscaled 4x with [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN), using the [realesrgan-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan) build and the general-purpose `realesrgan-x4plus` model. That model was chosen over the anime model because it keeps the soft 3D shading instead of adding dark outlines. The sprite sheet itself was upscaled the same way. The ground and sky tiles were instead cut from the sheet and edited so their left and right edges match, which lets them repeat without a visible join.
 
 For the transparent sprites, color and transparency were upscaled separately. Before upscaling, the edge pixels left over from the sheet's white background were repainted with the sprite's own colors, so there is no white outline on dark backgrounds.
 
